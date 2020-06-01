@@ -1,0 +1,14 @@
+dataset:
+  train_pos_img_path: /disk1/feigao/projects/detection/dataset/INRIAPerson/train_64x128_H96/pos/
+  train_neg_img_path: /disk1/feigao/projects/detection/dataset/INRIAPerson/train_64x128_H96/neg/
+  test_pos_img_path: /disk1/feigao/projects/detection/dataset/INRIAPerson/test_64x128_H96/pos/
+  test_neg_img_path: /disk1/feigao/projects/detection/dataset/INRIAPerson/test_64x128_H96/neg/
+  shuffle: True
+  resize: [64, 128]
+
+normalization:
+  gamma: 
+
+hog: 
+  
+train: 

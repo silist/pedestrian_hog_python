@@ -1,0 +1,1 @@
+# Pedestrain detection with HOG and SVM
