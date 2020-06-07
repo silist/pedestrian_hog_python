@@ -4,11 +4,19 @@ dataset:
   test_pos_img_path: /disk1/feigao/projects/detection/dataset/INRIAPerson/test_64x128_H96/pos/
   test_neg_img_path: /disk1/feigao/projects/detection/dataset/INRIAPerson/test_64x128_H96/neg/
   shuffle: True
-  resize: [64, 128]
+  resize: [128, 64]
 
 normalization:
-  gamma: 
+  gamma: 0.5
 
 hog: 
+  gradient_operator: simple
+  bins: 9
+  interpolation: none
+  cell_size: 8
+  block_size: 2
+  block_stride: 1
+  norm_method: L2-Hys
   
-train: 
+svm:
+  kernel: linear

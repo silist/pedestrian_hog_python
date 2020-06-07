@@ -10,7 +10,7 @@
 
 import os
 import numpy as np
-from scipy import io, transform
+from skimage import io, transform
 
 class InriaDataLoader(object):
     def __init__(self, cfg, dtype='train'):
@@ -23,7 +23,7 @@ class InriaDataLoader(object):
             dtype {str} -- train or test. (default: {'train'})
         """
         self.cfg = cfg
-        self.dataset = _load_dataset(cfg, dtype)
+        self.dataset = self._load_dataset(cfg, dtype)
         self.type = dtype
 
         
@@ -36,19 +36,20 @@ class InriaDataLoader(object):
                 img = self._resize(img, cfg['resize'])
             return img
         pos_img_path = cfg['%s_pos_img_path' % dtype]
-        all_pos_img_paths = os.path.join(pos_img_path, os.listdir(pos_img_path))
+        all_pos_img_paths = [os.path.join(pos_img_path, p) for p in os.listdir(pos_img_path)]
         neg_img_path = cfg['%s_neg_img_path' % dtype]
-        all_neg_img_paths = os.path.join(neg_img_path, os.listdir(neg_img_path))
+        all_neg_img_paths = [os.path.join(neg_img_path, p) for p in os.listdir(neg_img_path)]
         pos_images = [load_img_from_path(p) for p in all_pos_img_paths]
         neg_images = [load_img_from_path(p) for p in all_neg_img_paths]
-        pos_labels = np.ones(len(neg_images, dtype=int))
-        neg_labels = np.zeros(len(neg_images, dtype=int))
+        pos_labels = np.ones(len(pos_images), dtype=int)
+        neg_labels = np.zeros(len(neg_images), dtype=int)
         # 合并为完整数据集并打乱
-        images = np.array(pos_images.extend(neg_images))
-        labels = np.array(pos_labels.extend(neg_labels))
-        all_img_paths = all_pos_img_paths.extend(all_neg_img_paths)
+        images = np.array(pos_images + neg_images)
+        labels = np.append(pos_labels, neg_labels)
+        all_img_paths = np.array(all_pos_img_paths + all_neg_img_paths)
         if 'shuffle' in cfg and cfg['shuffle']:
-            idx = np.random.permutation(len(images))
+            # print(images.shape, labels.shape)
+            idx = np.random.permutation(images.shape[0])
             images, labels = images[idx], labels[idx]
             all_img_paths = all_img_paths[idx]
         self.img_paths = all_img_paths
@@ -65,5 +66,3 @@ class InriaDataLoader(object):
     
     def __len__(self):
         return self.size
-
-    

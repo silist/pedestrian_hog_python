@@ -9,7 +9,7 @@
 """
 
 import yaml
-from inria_loader import InriaDataLoader
+from .inria_loader import InriaDataLoader
 
 class Config(object):
     def __init__(self, cfg_path):
@@ -18,7 +18,7 @@ class Config(object):
     def _load(self, cfg_path):
         cfg = yaml.safe_load(open(cfg_path, 'r'))
         # Check necessary parts
-        for p in ['dataset', 'hog', 'train']:
+        for p in ['dataset', 'hog']:
             if not p in cfg:
                 raise KeyError('"%s" must be contained in config!' % p)
         # Data format
@@ -29,6 +29,7 @@ class Config(object):
     
     def __getitem__(self, key):
         return self.cfg[key]
+        
 
 if __name__ == "__main__":
     cfg_path = './config/hog_svm_inria.yml'

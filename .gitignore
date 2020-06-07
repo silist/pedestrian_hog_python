@@ -103,7 +103,6 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-mmdet/version.py
 data
 .vscode
 .idea
@@ -112,8 +111,20 @@ data
 *.pkl
 *.pkl.json
 *.log.json
-work_dirs/
 
 # Pytorch
 *.pth
 *.pth.stu
+
+# Notebooks
+/notebook
+*.ipynb
+
+# GUI
+demo_*.py
+wx_test.py
+
+# Config
+hog_svm_inria_*.yml
+
+*.png
