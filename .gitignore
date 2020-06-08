@@ -125,6 +125,6 @@ demo_*.py
 wx_test.py
 
 # Config
-hog_svm_inria_*.yml
+hog_svm_inria_pc_*.yml
 
 *.png
