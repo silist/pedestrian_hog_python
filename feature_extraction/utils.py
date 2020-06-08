@@ -47,14 +47,14 @@ def calculate_orientation(g_x, g_y):
     return theta
 
 def vector_normalization(vector, method):
-    """对于输入向量正则化
+    """对于输入向量归一化
 
     Args:
         vector (np.ndarry): 输入向量
         method (str): 'L1-norm', 'L1-sqrt', 'L2-norm' or 'L2-Hys'
 
     Returns:
-        [np.ndarray]: 正则化后的向量
+        [np.ndarray]: 归一化后的向量
     """    
     vec_norm = np.zeros(vector.shape)
     eps = np.finfo(float).eps

@@ -30,9 +30,9 @@
 + cell_size: int, hog划分cell的大小（正方形），单位pixel。
 + block_size: int, hog划分block的大小（正方形），单位cell。
 + block_stride: int, block滑动时的步长，单位cell。
-+ norm_method: `L1-norm/L1-sqrt/L2-norm/L2-Hys`，用于对block得到的hog向量正则化的方法。具体请参照原论文。
++ norm_method: `L1-norm/L1-sqrt/L2-norm/L2-Hys`，用于对block得到的hog向量归一化的方法。具体请参照原论文。
 #### svm
-+ kernel: 即sklearn.SVM中的核函数选项。HIK目前未实现。
++ kernel: 即sklearn.SVM中的核函数选项。
 
 ### Train
 在`train.py`文件中提供了完整的训练流程，使用时请注意配置文件地址和模型保存地址。
@@ -42,4 +42,3 @@
 
 ## TODO
 1. 在`feature_extraction/hog.py`中实现三线性插值算法
-2. 在`classifier/svm.py`中实现HIKSVM算法
