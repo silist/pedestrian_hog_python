@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+HOG+SVM行人检测DEMO
+{% endblock %}
+
+{% block head_extends %}
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid" style="max-width: 1200px;">
+    <div id="tips" style="margin-top: 40px;">
+        <h4 class="text-center" style="color: #aaa;">请先在左侧选择图片并上传，之后点击右侧的“开始预测”按钮</h4>
+    </div>
+    <div class="row row-cols-2" style="margin-top: 40px; ">
+        <div class="col-sm-6">
+            <div class="card border-dark h-100">
+                <div class="card-header justify-content-center" style="height: 60px">
+                    <!-- <div class="row align-items-center" >预测结果</div> -->
+                    <div class="d-flex align-items-center" style="margin-top: 5px;">上传图片</div>
+                </div>
+                <div class="card-body">
+                    <form enctype="multipart/form-data">
+                        <div class="file-loading">
+                            <input id="input-id" type="file" accept=".jpg,.png,.bmp" single>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card border-dark h-100">
+                <div class="card-header justify-content-center" style="height: 60px">
+                    <button type="button" class="btn btn-outline-dark" id="predict_result_btn">开始预测</button>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <img id="show_result" class="img-fluid max-auto d-block" src="static/images/question.png" alt="请上传图片~"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

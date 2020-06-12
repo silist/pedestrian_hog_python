@@ -128,3 +128,4 @@ wx_test.py
 hog_svm_inria_pc_*.yml
 
 *.png
+/flask

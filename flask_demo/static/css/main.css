@@ -1,0 +1,13 @@
+button#predict_result_btn.btn {
+    background-color: white;
+}
+
+img#show_result {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 80px;
+    margin-left: -60px;
+}
