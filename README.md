@@ -42,8 +42,8 @@
 
 ## DEMO
 提供的flask demo请查看`flask_demo`文件夹中内容。`flask_demo/README.md`中提供了对该demo的介绍。  
-在线运行请访问（校园网环境）：
-
+在线运行请访问（校园网环境）：  
+[http://219.223.251.6:7789/](http://219.223.251.6:7789/)
 
 ## TODO
 1. 在`feature_extraction/hog.py`中实现三线性插值算法

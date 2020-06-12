@@ -16,17 +16,23 @@ python app.py
 ```
 
 ### 在线DEMO（校园网环境）
+[http://219.223.251.6:7789/](http://219.223.251.6:7789/)
 
 ### 使用流程
-1. 建议使用Chromium内核浏览器访问，否则可能会有BUG。正常可以看到如下的页面：
+1. 建议使用Chromium内核浏览器访问，否则可能会有BUG。正常可以看到如下的页面：  
+![index.png](https://github.com/silist/pedestrian_hog_python/blob/master/flask_demo/static/images/index.png)
 
-2. 点击左侧**选择**按钮选择图片。建议使用`demo_images`文件夹中的图片，均来自于InriaPerson的测试集（模型训练自InriaPerson的训练集）。
+2. 点击左侧**选择**按钮选择图片。建议使用`demo_images`文件夹中的图片，均来自于InriaPerson的测试集（模型训练自InriaPerson的训练集）。  
+![select_image.png](https://github.com/silist/pedestrian_hog_python/blob/master/flask_demo/static/images/select_image.png)
 
-3. 点击左侧**上传**按钮上传图片。
+3. 点击左侧**上传**按钮上传图片。  
+![upload_image.png](https://github.com/silist/pedestrian_hog_python/blob/master/flask_demo/static/images/upload_image.png)
 
-3. 完成图片上传后，点击右侧的**开始预测**按钮，右侧会显示对该图片中是否包含行人的预测结果。
+3. 完成图片上传后，点击右侧的**开始预测**按钮，右侧会显示对该图片中是否包含行人的预测结果。  
+![predict.png](https://github.com/silist/pedestrian_hog_python/blob/master/flask_demo/static/images/predict.png)
 
-5. *完成图片预测后如想上传新的图片并预测，建议先在左侧预览框里移除旧图片。
+5. *完成图片预测后如想上传新的图片并预测，建议先在左侧预览框里移除旧图片。  
+![remove_image.png](https://github.com/silist/pedestrian_hog_python/blob/master/flask_demo/static/images/remove_image.png)
 
 ### Thanks to
 + [bootstrap 4](https://github.com/twbs/bootstrap)
