@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
 
 """
-@File    :   load_model.py
+@File    :   utils.py
 @Time    :   2020/06/11 15:43:34
 @Author  :   silist
 @Version :   1.0
-@Desc    :   Load SVM model.
+@Desc    :   Utils for flask demo.
 """
 
 import pickle
@@ -24,7 +24,7 @@ def get_feature(cfg, hog, img_path):
         img = transform.resize(img, cfg['dataset']['resize'])
     img = gamma_correction(img, cfg['normalization']['gamma'])
     feature_vector = hog.get_img_hog(img)
-    feature_vector = feature_vector.reshape(1, -1)   # 2D-array or sklearn
+    feature_vector = feature_vector.reshape(1, -1)   # 2D-array for sklearn
     return feature_vector
 
 def get_hog(cfg):

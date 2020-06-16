@@ -128,3 +128,6 @@ wx_test.py
 hog_svm_inria_pc_*.yml
 
 /images
+
+/plot_for_doc.py
+/tmp_img
